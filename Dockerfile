@@ -1,5 +1,8 @@
+# 使用Ubuntu 22.04，23.10 版本作为基础镜像
 FROM ubuntu:22.04
+# 阻止交互式提示
 ARG DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 python3-uvloop python3-cryptography python3-socks libcap2-bin ca-certificates && \
     rm -rf /var/lib/apt/lists/* && \
